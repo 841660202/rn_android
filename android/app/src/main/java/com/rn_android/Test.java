@@ -3,6 +3,7 @@ package com.rn_android;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -101,8 +102,17 @@ public class Test {
 //                .isForce(false) //是否强制更新，默认false 强制更新情况下用户不同意更新则不能使用app
 //                .update();
     }
-    public void dirUpdate(String mUpdateUrl ){
-
+    public void dirUpdate(Activity activity, String mUpdateUrl ){
+        new UpdateAppManager
+                .Builder()
+                //当前Activity
+                .setActivity(activity)
+                //更新地址
+                .setUpdateUrl(mUpdateUrl)
+                //实现httpManager接口的对象
+                .setHttpManager(new UpdateAppHttpUtil())
+                .build()
+                .update();
     }
 }
 

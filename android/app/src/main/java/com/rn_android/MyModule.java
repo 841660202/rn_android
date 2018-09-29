@@ -54,10 +54,7 @@ public class MyModule extends ReactContextBaseJavaModule {
     }
     @ReactMethod
     public void dirUpdate(String mUpdateUrl) {
-//        AppCompatActivity currentActivity = (AppCompatActivity) getCurrentActivity();
-//        FragmentActivity currentActivity = (FragmentActivity) getCurrentActivity();
-//        Activity currentActivity = getCurrentActivity();
-        new Test().dirUpdate(mUpdateUrl);
+        new Test().dirUpdate(getCurrentActivity(),mUpdateUrl);
 
     }
 }

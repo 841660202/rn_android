@@ -1,6 +1,6 @@
 package com.rn_android;
 
-import com.facebook.react.ReactActivity;
+        import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
 

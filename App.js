@@ -73,6 +73,13 @@ export default class ywq extends Component {
 
                     调用原生升级
                 </Text>
+                <Text style={styles.welcome}
+                    //给此处的文字绑定一个事件，其中callNative为要调用的方法名。
+                      onPress={this.dirUpdate.bind(this)}
+                >
+
+                    调用原生升级
+                </Text>
             </View>
         );
     }
@@ -90,6 +97,9 @@ export default class ywq extends Component {
     }
     update() {
         NativeModules.MyModule.update('https://raw.githubusercontent.com/WVector/AppUpdateDemo/master/json/json1.txt');
+    }
+    dirUpdate() {
+        NativeModules.MyModule.dirUpdate('https://raw.githubusercontent.com/WVector/AppUpdateDemo/master/json/json1.txt');
     }
 }
 
